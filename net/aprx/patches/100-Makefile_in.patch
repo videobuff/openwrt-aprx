@@ -1,16 +1,16 @@
 diff -ruN aprx-2.8.2.orig/Makefile.in aprx-2.8.2/Makefile.in
---- aprx-2.8.2.orig/Makefile.in	2015-04-06 01:23:41.000000000 +0200
-+++ aprx-2.8.2/Makefile.in	2015-12-26 14:12:24.231772254 +0100
-@@ -94,10 +94,10 @@
+--- aprx-2.8.2.orig/Makefile.in	2017-01-16 00:31:58.243085783 +0100
++++ aprx-2.8.2/Makefile.in		2017-01-16 00:31:19.454990431 +0100
+@@ -93,10 +93,10 @@
  
  
- $(PROGAPRX):   $(OBJSAPRX) VERSION Makefile
--               $(LD) $(LDFLAGS) -o $@ $(OBJSAPRX) $(LIBS)
-+               $(CC) $(CCFLAGS) -o $@ $(OBJSAPRX) $(LIBS)
+ $(PROGAPRX):	$(OBJSAPRX) VERSION Makefile
+-		$(CC) $(CCFLAGS) -o $@ $(OBJSAPRX) $(LIBS)
++		$(LD) $(LDFLAGS) -o $@ $(OBJSAPRX) $(LIBS)
  
- $(PROGSTAT):   $(OBJSSTAT) VERSION Makefile
--               $(LD) $(LDFLAGS) -o $@ $(OBJSSTAT) $(LIBS)
-+               $(CC) $(CCFLAGS) -o $@ $(OBJSSTAT) $(LIBS)
+ $(PROGSTAT):	$(OBJSSTAT) VERSION Makefile
+-		$(CC) $(CCFLAGS) -o $@ $(OBJSSTAT) $(LIBS)
++		$(LD) $(LDFLAGS) -o $@ $(OBJSSTAT) $(LIBS)
  
- .PHONY:                man
- man:           $(MAN)
+ .PHONY:		man
+ man:		$(MAN)
