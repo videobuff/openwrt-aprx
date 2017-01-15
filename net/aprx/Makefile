@@ -55,4 +55,5 @@ endef
 define Package/aprx/conffiles
 /etc/aprx.conf
 endef
+
 $(eval $(call BuildPackage,aprx))
