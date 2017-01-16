@@ -6,6 +6,7 @@
 #
 
 include $(TOPDIR)/rules.mk
+include $(INCLUDE_DIR)/package.mk
 
 PKG_NAME:=aprx
 PKG_REV:=""
@@ -22,7 +23,6 @@ PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=$(PKG_REV)
 PKG_SOURCE_PROTO:=$(PKG_PROTO_NAME)
 
-include $(INCLUDE_DIR)/package.mk
 
 define Package/aprx
   SECTION:=net
