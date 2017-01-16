@@ -56,4 +56,4 @@ define Package/aprx/conffiles
 /etc/aprx.conf
 endef
 
-$(eval $(call BuildPackage,aprx))
+$(eval $(call BuildPackage,$(PKG_NAME)))
