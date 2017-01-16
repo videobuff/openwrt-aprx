@@ -57,4 +57,3 @@ define Package/aprx/conffiles
 endef
 
 $(eval $(call BuildPackage,aprx))
-
