@@ -8,8 +8,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aprx
-PKG_REV:=15-gc580b31
-PKG_VERSION:=2.8.2
+PKG_REV:=""
+PKG_VERSION:=2.9.0
 PKG_RELEASE:=Stable
 PKG_PROTO_NAME:=git
 
@@ -36,6 +36,7 @@ endef
 define Package/aprx/description
 	This daemon listens for traffic on the specified serial interfaces.
 	It then forwards appropriate packets to APRS-IS servers.
+	It also can act as a digipeater
 endef
 
 CONFIGURE_ARGS += \
@@ -56,3 +57,4 @@ define Package/aprx/conffiles
 endef
 
 $(eval $(call BuildPackage,aprx))
+
