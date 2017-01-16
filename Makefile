@@ -6,7 +6,6 @@
 #
 
 include $(TOPDIR)/rules.mk
-include $(INCLUDE_DIR)/package.mk
 
 PKG_NAME:=aprx
 PKG_REV:=""
@@ -23,6 +22,7 @@ PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=$(PKG_REV)
 PKG_SOURCE_PROTO:=$(PKG_PROTO_NAME)
 
+include $(INCLUDE_DIR)/package.mk
 
 define Package/aprx
   SECTION:=net
@@ -36,7 +36,6 @@ endef
 define Package/aprx/description
 	This daemon listens for traffic on the specified serial interfaces.
 	It then forwards appropriate packets to APRS-IS servers.
-	It also can act as a digipeater
 endef
 
 CONFIGURE_ARGS += \
@@ -56,4 +55,4 @@ define Package/aprx/conffiles
 /etc/aprx.conf
 endef
 
-$(eval $(call BuildPackage,$(PKG_NAME)))
+$(eval $(call BuildPackage,aprx))
