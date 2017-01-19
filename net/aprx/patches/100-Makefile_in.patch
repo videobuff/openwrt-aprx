@@ -1,6 +1,6 @@
 diff -ruN aprx-2.8.2.orig/Makefile.in aprx-2.8.2/Makefile.in
---- aprx-2.9.0.orig/Makefile.in	2015-04-06 01:23:41.000000000 +0200
-+++ aprx-2.9.0/Makefile.in	2015-12-26 14:12:24.231772254 +0100
+--- aprx-2.8.2.orig/Makefile.in	2016-04-06 01:23:41.000000000 +0200
++++ aprx-2.8.2/Makefile.in	2016-12-26 14:12:24.231772254 +0100
 @@ -94,10 +94,10 @@
  
  
