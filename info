@@ -1,1 +1,26 @@
 info test
+
+
+How To Create Patches Using diff
+Use "diff -up" or "diff -uprN" to create patches with diff(1).
+
+When creating your patch, make sure to create it in "unified diff" format, as supplied by the '-u' argument to diff(1).
+
+Also, please use the '-p' argument which shows which C function each change is in - that makes the resultant diff a lot easier to read.
+
+To create a patch for a single file, it is often sufficient to do:
+
+    SRCTREE= trunk
+    MYFILE=  package/base-files/Makefile
+    cd $SRCTREE
+    cp $MYFILE $MYFILE.orig
+    vi $MYFILE    # make your change
+    cd ..
+    diff -up $SRCTREE/$MYFILE{.orig,} > /tmp/patch
+
+To create a patch for multiple files, you should checkout a "vanilla", or unmodified OpenWrt source tree, and generate a diff against your own source tree. For example:
+
+    MYSRC= /devel/openwrt/trunk
+    svn co svn://svn.openwrt.org/openwrt/trunk/
+    diff -uprN trunk $MYSRC > /tmp/patch
+If you are going to include a diffstat after the "---" marker, please use diffstat options "-p 1 -w 70" so that filenames are listed from the top of the kernel source tree and don't use too much horizontal space (easily fit in 80 columns, maybe with some indentation).
