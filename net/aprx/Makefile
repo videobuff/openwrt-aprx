@@ -27,7 +27,7 @@ define Package/aprx
   SECTION:=net
   CATEGORY:=Network
   TITLE:=APRS RX & TX igate / Digipeater PhirePhly version 2.9.0 Github
-  URL:=https://github.com/PhirePhly/aprx
+  URL:=https://github.com/videobuff/aprx.git
   DEPENDS:=+libpthread
 
 endef
