@@ -16,8 +16,7 @@ PKG_PROTO_NAME:=git
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 #PKG_SOURCE_URL:=http://thelifeofkenneth.com/aprx/release/
 
-PKG_SOURCE_URL:=https://github.com/PhirePhly/aprx
-
+PKG_SOURCE_URL:=https://github.com/videobuff/aprx.git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=$(PKG_REV)
 PKG_SOURCE_PROTO:=$(PKG_PROTO_NAME)
@@ -27,7 +26,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/aprx
   SECTION:=net
   CATEGORY:=Network
-  TITLE:=APRS RX & TX igate / Digipeater PhirePhly version 2.8.2 Github
+  TITLE:=APRS RX & TX igate / Digipeater PhirePhly version 2.9.0 Github
   URL:=https://github.com/PhirePhly/aprx
   DEPENDS:=+libpthread
 
