@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aprx
-#PKG_REV:=""
+PKG_REV:=""
 PKG_VERSION:=2.9.0
 PKG_RELEASE:=Stable
 PKG_PROTO_NAME:=git
