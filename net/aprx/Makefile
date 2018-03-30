@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2008-2016 OpenWrt.org
-# adapted by pa0esh
+# Copyright (C) 2008-2018 OpenWrt.org
+# adapted by pa0esh for Openwrt Lede
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
@@ -14,9 +14,8 @@ PKG_RELEASE:=Stable
 PKG_PROTO_NAME:=git
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-#PKG_SOURCE_URL:=http://thelifeofkenneth.com/aprx/release/
-
-PKG_SOURCE_URL:=https://github.com/videobuff/aprx.git
+PKG_SOURCE_URL:=http://thelifeofkenneth.com/aprx/release/
+#PKG_SOURCE_URL:=https://github.com/videobuff/aprx.git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=$(PKG_REV)
 PKG_SOURCE_PROTO:=$(PKG_PROTO_NAME)
@@ -29,7 +28,6 @@ define Package/aprx
   TITLE:=APRS RX & TX igate / Digipeater PhirePhly version 2.9.0 Github
   URL:=https://github.com/videobuff/aprx.git
   DEPENDS:=+libpthread
-
 endef
 
 define Package/aprx/description
