@@ -12,7 +12,7 @@ PKG_NAME:=aprx
 PKG_VERSION:=2.9.0
 PKG_RELEASE:=Stable
 PKG_PROTO_NAME:=git
-PKG_SOURCE_URL:=http://thelifeofkenneth.com/aprx/release/
+PKG_SOURCE_URL:=https://github.com/videobuff/openwrt-aprx.git
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$PKG_RELEASE.tar.gz
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
