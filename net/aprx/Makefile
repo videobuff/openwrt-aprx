@@ -8,14 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=aprx
-PKG_REV:=""
+#PKG_REV:=""
 PKG_VERSION:=2.9.0
 PKG_RELEASE:=Stable
 PKG_PROTO_NAME:=git
-
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://thelifeofkenneth.com/aprx/release/
-#PKG_SOURCE_URL:=https://github.com/videobuff/aprx.git
+
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$PKG_RELEASE.tar.gz
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=$(PKG_REV)
 PKG_SOURCE_PROTO:=$(PKG_PROTO_NAME)
@@ -38,18 +37,25 @@ endef
 CONFIGURE_ARGS += \
 	--with-embedded \
 
-define Package/aprx/install
-	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) ./files/aprx.init $(1)/etc/init.d/aprx
-	$(INSTALL_DIR) $(1)/etc
-	$(INSTALL_CONF) $(PKG_BUILD_DIR)/aprx.conf $(1)/etc/
-	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/aprx $(1)/usr/sbin/
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/aprx-stat $(1)/usr/sbin/
+# Package preparation instructions; create the build directory and copy the source code. 
+# The last command is necessary to ensure our preparation instructions remain compatible with the patching system.
+define Build/Prepare
+        mkdir -p $(PKG_BUILD_DIR)
+        cp $(SOURCE_DIR)/* $(PKG_BUILD_DIR)
+        $(Build/Patch)
 endef
 
-define Package/aprx/conffiles
-/etc/aprx.conf
+# Package build instructions; invoke the target-specific compiler to first compile the source file, and then to link the file into the final executable
+define Build/Compile
+        $(TARGET_CC) $(TARGET_CFLAGS) -o $(PKG_BUILD_DIR)/helloworld.o -c $(PKG_BUILD_DIR)/helloworld.c
+        $(TARGET_CC) $(TARGET_LDFLAGS) -o $(PKG_BUILD_DIR)/$1 $(PKG_BUILD_DIR)/helloworld.o
 endef
+
+# Package install instructions; create a directory inside the package to hold our executable, and then copy the executable we built previously into the folder
+define Package/aprx/install
+        $(INSTALL_DIR) $(1)/usr/bin
+        $(INSTALL_BIN) $(PKG_BUILD_DIR)/helloworld $(1)/usr/bin
+endef
+
 
 $(eval $(call BuildPackage,aprx))
