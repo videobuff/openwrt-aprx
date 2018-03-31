@@ -54,7 +54,7 @@ endef
 # Package install instructions; create a directory inside the package to hold our executable, and then copy the executable we built previously into the folder
 define Package/aprx/install
         $(INSTALL_DIR) $(1)/usr/bin
-        $(INSTALL_BIN) $(PKG_BUILD_DIR)/helloworld $(1)/usr/bin
+        $(INSTALL_BIN) $(PKG_BUILD_DIR)/aprx $(1)/usr/bin
 endef
 
 
