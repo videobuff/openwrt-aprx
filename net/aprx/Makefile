@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2008-2018 OpenWrt.org
+# Copyright (C) 2008-2020 OpenWrt.org
 # adapted by pa0esh for Openwrt Lede
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
