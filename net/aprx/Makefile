@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2008-2020 OpenWrt.org
-# adapted by pa0esh for Openwrt Lede
+# Copyright (C) 2020 Erik Schott <erik@pa0esh.com>
+# The old aprx package has been adapted by pa0esh for Openwrt Lede
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
